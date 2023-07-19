@@ -10,7 +10,7 @@
     --clr-yellow: #F08700;
     --clr-red: #69140E;
     --combined-colors: linear-gradient(45deg, var(--clr-yellow) 20%,var(--clr-red));
-    --fs-display: 1.5rem;
+    --fs-display: 1.25rem;
     --fs-body: 1rem;
 }
 
@@ -18,7 +18,7 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 20rem;
     font-family: var(--ff-body);
-    font-size: clamp(16px, 2vw, 32px);
+    font-size: clamp(20px, 2vw, 32px);
 }
 
 body {
@@ -27,13 +27,24 @@ body {
 }
 
 nav {
-    background: var(--combined-colors);
     height: 100px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navbtn {
+    background: var(--clr-white);
+    columns: var(--clr-blue);
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    font-size: var(--fs-body);
+    color: var(--clr-blue);
+    text-decoration: 0;
 }
 
 section {
