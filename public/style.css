@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --ff-body: 'Tahoma', 'Segoe UI', 'Lucida Console';
+    --clr-white: #F5EFED;
+    --clr-blue: #01172F;
+    --clr-yellow: #F08700;
+    --clr-red: #69140E;
+    --combined-colors: linear-gradient(45deg, var(--clr-yellow) 20%,var(--clr-red));
+    --fs-display: 1.5rem;
+    --fs-body: 1rem;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20rem;
+    font-family: var(--ff-body);
+    font-size: clamp(16px, 2vw, 32px);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background: var(--combined-colors);
+    height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+}
+
+section {
+    padding-top: 100px;
+    width: 100%;
+    height: 100vh;
+    background: var(--clr-blue);
+}
