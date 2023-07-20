@@ -7,11 +7,24 @@
     <link rel="stylesheet" href="./public/style.css">
 </head>
 <body>
-    <nav>
-        <a href="#" class="navbtn">Quaternions</a>
-        <a href="#" class="navbtn">rotation matrices</a>
-    </nav>
+    <header>
+        <button class="rotatebtn" onclick="rotate(0,0)">Front</button>
+        <button class="rotatebtn" onclick="rotate(0,180)">Back</button>
+        <button class="rotatebtn" onclick="rotate(0,-90)">Right</button>
+        <button class="rotatebtn" onclick="rotate(0,90)">Left</button>
+        <button class="rotatebtn" onclick="rotate(-90,0)">Top</button>
+        <button class="rotatebtn" onclick="rotate(90,0)">Bottom</button>
+    </header>
     <section>
+        <div class="cube" id="cube">
+            <div id="top">Top</div>
+            <div id="bottom">Bottom</div>
+            <div id="left">Left</div>
+            <div id="right">Right</div>
+            <div id="front">Front</div>
+            <div id="back">Back</div>
+        </div>
     </section>
 </body>
+<script src="./index.js"></script>
 </html>
