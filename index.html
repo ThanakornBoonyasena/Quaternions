@@ -8,12 +8,22 @@
 </head>
 <body>
     <header>
-        <button class="rotatebtn" onclick="rotate(0,0)">Quaternion</button>
-        <button class="rotatebtn" onclick="rotate(0,180)">Rotation Matrix</button>
-        <button class="rotatebtn" onclick="rotate(0,-90)">Direction Cosine</button>
-        <button class="rotatebtn" onclick="rotate(0,90)">Rotation Axis</button>
-        <button class="rotatebtn" onclick="rotate(-90,0)">Description</button>
-        <!-- <button class="rotatebtn" onclick="rotate(90,0)">Bottom</button> -->
+        <select onchange="rotate(this.value)" id="dropbox" placeholder="Hello">
+            <option value hidden>Chose topic</option>
+            <option value= '0,0'>Quaternion</option>
+            <option value= '0,180'>Rotation Matrix</option>
+            <option value= '0,-90'>Direction Cosine</option>
+            <option value= '0,90'>Rotation Axis</option>
+            <option value= '-90,0'>Description</option>
+        </select>
+        <!-- <div class="menu">
+            <button class="rotatebtn" onclick="rotate(0,0)">Quaternion</button>
+            <button class="rotatebtn" onclick="rotate(0,180)">Rotation Matrix</button>
+            <button class="rotatebtn" onclick="rotate(0,-90)">Direction Cosine</button>
+            <button class="rotatebtn" onclick="rotate(0,90)">Rotation Axis</button>
+            <button class="rotatebtn" onclick="rotate(-90,0)">Description</button>
+            <button class="rotatebtn" onclick="rotate(90,0)">Bottom</button>
+        </div> -->
     </header>
     <section>
         <div class="cube" id="cube">
