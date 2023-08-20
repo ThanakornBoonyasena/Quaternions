@@ -11,15 +11,13 @@
     --clr-black: #050401;
     --clr-red: #FC5130;
     --combined-colors: linear-gradient(45deg, var(--clr-yellow) 20%,var(--clr-red));
-    --fs-display: 1.25rem;
-    --fs-body: 1rem;
-    --full-cube: clamp(200px, 40vw, 500px);
+    --fs-display: 1.125rem;
+    --fs-body: 0.75rem;
+    --full-cube: clamp(200px, 40vw, 500px); 
     --half-cube: clamp(100px, 20vw, 250px);
 }
 
 html {
-    /* scroll-behavior: smooth;
-    scroll-padding-top: 20rem; */
     font-family: var(--ff-body);
     font-size: clamp(20px, 2vw, 32px);
 }
@@ -27,6 +25,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
+    background: var(--clr-black);
 }
 
 header {
@@ -50,11 +49,11 @@ header {
 }
 
 section {
-    padding-top: 100px;
+    padding-top: 50px;
     width: 100%;
     height: 100vh;
-    background: var(--clr-black);
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     perspective: 1000px;
@@ -73,7 +72,7 @@ section {
     width: var(--full-cube);
     aspect-ratio: 1/1;
     position: absolute;
-    border: 0.1rem solid var(--clr-blue);
+    border: 0.01rem solid var(--clr-blue);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,6 +88,55 @@ section {
 #top{ transform: rotateX(90deg) translateZ(var(--half-cube)); }
 #left { transform: rotateY(-90deg) translateZ(var(--half-cube)); }
 #right { transform: rotateY(90deg) translateZ(var(--half-cube)); }
+
+/* -------------------------------------- */
+
+.btn {
+    background: 0;
+    border: none;
+    width: 5rem;
+    height: 50px;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    color: var(--clr-blue);
+    font-size: var(--fs-display);
+}
+
+.menu {
+    position: absolute;
+    right: 1rem;
+    top: 90%;
+    transition: transform .5s ease-in-out;
+    transform: translateY(-200%);
+    background: var(--clr-gray);
+    padding: var(--fs-body);
+    font-size: var(--fs-body);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.active {
+    transform: translateY(0);
+}
+
+.menu-item {
+    border: 0;
+    background: 0;
+    font-size: var(--fs-body);
+    color: var(--clr-white);
+    height: 2rem;
+}
+
+/* -------------------------------------- */
+
+.card {
+
+}
+
+/* -------------------------------------- */
+
 
 @keyframes rotate360 {
     from {

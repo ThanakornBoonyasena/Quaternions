@@ -1,8 +1,9 @@
-const rotate = (degs) => {
-    const deglist = degs.split(",");
-    const x = deglist[0];
-    const y = deglist[1];
+const rotate = (x, y) => {
     const cube = document.getElementById("cube");
     cube.style.setProperty("--cube-rotation", `rotateX(${x}deg) rotateY(${y}deg)`);
-    console.log("x: ", x, "y: ", y);
+}
+
+const toggleMenu = () => {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
 }

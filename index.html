@@ -8,32 +8,26 @@
 </head>
 <body>
     <header>
-        <select onchange="rotate(this.value)" id="dropbox" placeholder="Hello">
-            <option value hidden>Chose topic</option>
-            <option value= '0,0'>Quaternion</option>
-            <option value= '0,180'>Rotation Matrix</option>
-            <option value= '0,-90'>Direction Cosine</option>
-            <option value= '0,90'>Rotation Axis</option>
-            <option value= '-90,0'>Description</option>
-        </select>
-        <!-- <div class="menu">
-            <button class="rotatebtn" onclick="rotate(0,0)">Quaternion</button>
-            <button class="rotatebtn" onclick="rotate(0,180)">Rotation Matrix</button>
-            <button class="rotatebtn" onclick="rotate(0,-90)">Direction Cosine</button>
-            <button class="rotatebtn" onclick="rotate(0,90)">Rotation Axis</button>
-            <button class="rotatebtn" onclick="rotate(-90,0)">Description</button>
-            <button class="rotatebtn" onclick="rotate(90,0)">Bottom</button>
-        </div> -->
+        <button class="btn" onclick="toggleMenu()"><strong>Menu</strong></button>
+        <div class="menu">
+            <button class="menu-item" onclick="rotate(0,0)">Quaternion</button>
+            <button class="menu-item" onclick="rotate(0,180)">Rotation Matrix</button>
+            <button class="menu-item" onclick="rotate(0,-90)">Direction Cosine</button>
+            <button class="menu-item" onclick="rotate(0,90)">Rotation Axis</button>
+            <button class="menu-item" onclick="rotate(-90,0)">Description</button>
+        </div>
     </header>
     <section>
+        <div class="card"></div>
         <div class="cube" id="cube">
-            <div id="top">Top</div>
-            <div id="bottom">Bottom</div>
-            <div id="left">Left</div>
-            <div id="right">Right</div>
-            <div id="front">Front</div>
-            <div id="back">Back</div>
+            <div id="top">Description</div>
+            <div id="bottom">T-T</div>
+            <div id="left">Rotation Axis</div>
+            <div id="right">Direction Cosine</div>
+            <div id="front">Quaternion</div>
+            <div id="back">Rotation Matrix</div>
         </div>
+        <div class="card"></div>
     </section>
 </body>
 <script src="./index.js"></script>
