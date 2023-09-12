@@ -10,24 +10,32 @@
     <header>
         <button class="btn" onclick="toggleMenu()"><strong>Menu</strong></button>
         <div class="menu">
-            <button class="menu-item" onclick="rotate(0,0)">Quaternion</button>
-            <button class="menu-item" onclick="rotate(0,180)">Rotation Matrix</button>
-            <button class="menu-item" onclick="rotate(0,-90)">Direction Cosine</button>
-            <button class="menu-item" onclick="rotate(0,90)">Rotation Axis</button>
-            <button class="menu-item" onclick="rotate(-90,0)">Description</button>
+            <button class="menu-item" onclick="rotate(0, 0, 'Quaternion')">`</button>
+            <button class="menu-item" onclick="rotate(0, 180, 'Rotation Matrix')">Rotation Matrix</button>
+            <button class="menu-item" onclick="rotate(0, -90, 'Direction Cosine')">Direction Cosine</button>
+            <button class="menu-item" onclick="rotate(0, 90, 'Rotation Axis')">Rotation Axis</button>
+            <button class="menu-item" onclick="rotate(-90, 0, 'Description')">Description</button>
         </div>
     </header>
     <section>
-        <div class="card"></div>
-        <div class="cube" id="cube">
-            <div id="top">Description</div>
-            <div id="bottom">T-T</div>
-            <div id="left">Rotation Axis</div>
-            <div id="right">Direction Cosine</div>
-            <div id="front">Quaternion</div>
-            <div id="back">Rotation Matrix</div>
+        <div class="cube-container">
+            <div class="cube" id="cube">
+                <div id="top">Description</div>
+                <div id="bottom">T-T</div>
+                <div id="left">Rotation Axis</div>
+                <div id="right">Direction Cosine</div>
+                <div id="front">Quaternion</div>
+                <div id="back">Rotation Matrix</div>
+            </div>
         </div>
-        <div class="card"></div>
+        <!-- <div class="card-container">
+            <div class="card">
+                <div class="front"></div>
+                <div class="back">
+                    <p id="text"></p>
+                </div>
+            </div>
+        </div> -->
     </section>
 </body>
 <script src="./index.js"></script>
