@@ -13,7 +13,7 @@
             <button class="menu-item" onclick="rotate(0, 0, 'Quaternion')">Quaternion</button>
             <button class="menu-item" onclick="rotate(0, 180, 'Rotation Matrix')">Rotation Matrix</button>
             <button class="menu-item" onclick="rotate(0, -90, 'Direction Cosine')">Direction Cosine</button>
-            <button class="menu-item" onclick="rotate(0, 90, 'Rotation Axis')">Rotation Axis</button>
+            <!-- <button class="menu-item" onclick="rotate(0, 90, 'Rotation Axis')">Rotation Axis</button> -->
             <button class="menu-item" onclick="rotate(-90, 0, 'Description')">Description</button>
         </div>
     </header>
@@ -23,9 +23,43 @@
                 <div id="top">Description</div>
                 <div id="bottom">T-T</div>
                 <div id="left">Rotation Axis</div>
-                <div id="right">Direction Cosine</div>
-                <div id="front">Quaternion</div>
-                <div id="back">Rotation Matrix</div>
+                <div id="right">
+                    <form>
+                        <input type="number" class="input" id="roll" name="roll" required>
+                        <input type="number" class="input" id="pitch" name="pitch" required>
+                        <input type="number" class="input" id="yaw" name="yaw" required>
+                        <button type="submit" onclick="computeAndReplace(roll.value, pitch.value, yaw.value, '', '', '', '', '', '', '', '', '', '', '', '','')">Submit</button>
+                    </form>
+                </div>
+                <div id="front">
+                    <form>
+                        <input type="number" class="input" id="w" name="w" required>
+                        <input type="number" class="input" id="x" name="x" required>
+                        <input type="number" class="input" id="y" name="y" required>
+                        <input type="number" class="input" id="z" name="z" required>
+                        <button type="submit" onclick="computeAndReplace( '','', '', x.value, x.value, y.value, z.value, '', '', '', '', '', '', '', '','')">Submit</button>
+                    </form>
+                </div>
+                <div id="back">
+                    <form>
+                        <div class="row">
+                            <input type="number" class="input" id="r00" name="r00" required>
+                            <input type="number" class="input" id="r01" name="r01" required>
+                            <input type="number" class="input" id="r02" name="r02" required>
+                        </div>
+                        <div class="row">
+                            <input type="number" class="input" id="r10" name="r10" required>
+                            <input type="number" class="input" id="r11" name="r11" required>
+                            <input type="number" class="input" id="r12" name="r12" required>
+                        </div>
+                        <div class="row">
+                            <input type="number" class="input" id="r20" name="r20" required>
+                            <input type="number" class="input" id="r21" name="r21" required>
+                            <input type="number" class="input" id="r22" name="r22" required>
+                        </div>
+                        <button type="submit" onclick="computeAndReplace( '','', '', '', '', '', '', r00.value, r01.value, r02.value, r10.value, r11.value, r12.value, r20.value, r21.value, r22.value)">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
         <!-- <div class="card-container">

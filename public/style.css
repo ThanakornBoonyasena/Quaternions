@@ -53,7 +53,7 @@ section {
     aspect-ratio: 1/1;
     position: relative;
     transform-style: preserve-3d;
-    transform: var(--cube-rotation, rotateX(0deg) rotateY(45deg));
+    transform: var(--cube-rotation, rotateX(0deg) rotateY(-45deg));
     transition: transform 0.25s ease-in-out;
 }
 
@@ -76,7 +76,7 @@ section {
 }
 
 #front { transform: translateZ(var(--half-cube)); }
-#back { transform: translateZ(calc(-1 * var(--half-cube))) rotateY(180deg); }
+#back { transform: translateZ(calc(-1 * var(--half-cube))) rotateY(180deg); display: flex; flex-direction: column;}
 #bottom{ transform: rotateX(-90deg) translateZ(var(--half-cube)); }
 #top{ transform: rotateX(90deg) translateZ(var(--half-cube)); }
 #left { transform: rotateY(-90deg) translateZ(var(--half-cube)); }
@@ -121,7 +121,13 @@ section {
     height: 2rem;
 }
 
+
 /* -------------------------------------- */
+
+.input {
+    width: 1rem;
+    height: 1rem;
+}
 
 /* .card-container {
     perspective: 1000px;
