@@ -3,22 +3,35 @@ const toggleMenu = () => {
   menu.classList.toggle('active');
 }
 
-// let epoch = 0
+let epoch = 0
 
-const rotate = (x, y, Bruh) => {
+const rotate = (x, y, header, paragraph) => {
   const cube = document.getElementById("cube");
-  // const card = document.querySelector(".card");
-  // const text = document.querySelector("#text");
+  const card = document.querySelector(".card");
+  const text = document.querySelector("#text");
+  const ahh = document.getElementById("ahh");   
+  const cardContainer = document.querySelector('.card-container');
+  const screenWidth = window.innerWidth;
+
   cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg)`;
-  // if (epoch == 0){
-  //     card.classList.toggle('rotate');
-  //     epoch += 1
-  // } else{
-  //     card.classList.toggle('gyat');
-  //     epoch += 1
-  // }
-  // console.log(epoch)
-  // text.innerText = `${Bruh}`
+  if (epoch == 0){
+      card.classList.toggle('rotate');
+      epoch += 1
+  } else{
+      card.classList.toggle('gyat');
+      epoch += 1
+  }
+  if (header === undefined || paragraph === undefined) {
+    cardContainer.style.display = "none";
+  } 
+  if (screenWidth >= 630 && (header === undefined || paragraph === undefined)) {
+    cardContainer.style.display = "flex";
+  }
+  
+  console.log(header) 
+  console.log(paragraph)
+  text.innerText = header
+  ahh.innerHTML = paragraph
 }
 
 const checkData = (threeDimensionalSpace) => new Promise((resolve, reject) => {

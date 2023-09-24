@@ -125,11 +125,18 @@ section {
 /* -------------------------------------- */
 
 .input {
-    width: 1rem;
+    width: 1.25rem;
     height: 1rem;
 }
 
-/* .card-container {
+label {
+    font-size: var(--fs-body);
+}
+
+/* -------------------------------------- */
+
+.card-container {
+    display: none;
     perspective: 1000px;
 }
 
@@ -139,6 +146,20 @@ section {
     background: var(--clr-black);
     transform-style: preserve-3d;
     transition: transform 0.5s;
+}
+
+#ahh {
+    justify-content: space-evenly;
+}
+
+#text, #ahh {
+    color: var(--clr-white);
+}
+
+.back {
+    display: flex;
+    flex-direction: column;
+    padding: var(--fs-body);
 }
 
 .rotate {
@@ -165,7 +186,7 @@ section {
     background: var(--clr-gray);
     transform: rotateY(180deg);
     border-radius: .5rem;
-} */
+}
 
 
 /* -------------------------------------- */
@@ -178,3 +199,4 @@ section {
         transform: rotateY(360deg);
     }
 }
+

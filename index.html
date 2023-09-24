@@ -10,9 +10,9 @@
     <header>
         <button class="btn" onclick="toggleMenu()"><strong>Menu</strong></button>
         <div class="menu">
-            <button class="menu-item" onclick="rotate(0, 0, 'Quaternion')">Quaternion</button>
-            <button class="menu-item" onclick="rotate(0, 180, 'Rotation Matrix')">Rotation Matrix</button>
-            <button class="menu-item" onclick="rotate(0, -90, 'Direction Cosine')">Direction Cosine</button>
+            <button class="menu-item" onclick="rotate(0, 0, 'Quaternion', 'มันมีส่วนประกอบ x, y และ z ซึ่งแสดงถึงแกนที่การหมุนจะเกิดขึ้น นอกจากนี้ยังมีส่วนประกอบ w ซึ่งแสดงถึงจํานวนการหมุนที่จะเกิดขึ้นเกี่ยวกับแกนนี้ ในระยะสั้น เวกเตอร์และลอย ด้วยตัวเลขสี่ตัวนี้ เป็นไปได้ที่จะสร้างเมทริกซ์ซึ่งจะแสดงถึงการหมุนทั้งหมดอย่างสมบูรณ์แบบเอาไว้เขียนเกม')">Quaternion</button>
+            <button class="menu-item" onclick="rotate(0, 180, 'Rotation Matrix', 'การแปลงทางเรขาคณิตโดยการหมุน ( Rotation ) เป็นการแปลงที่จุดทุกจุดของรูปต้นแบบเคลื่อนที่ไปเป็นมุมเดียวกันรอบจุดตรึงอยู่กับที่ ที่กำหนดหรือจุดหมุน การหมุนจะหมุนทวนเข็มนาฬิกาหรือตามเข็มนาฬิกาใช้สร้างรถไฟเหาะได้')">Rotation Matrix</button>
+            <button class="menu-item" onclick="rotate(0, -90, 'Direction Cosine', 'คือ การบอกทิศทางของเวกเตอร์ ด้วยขนาดของมุมที่ทำกับแกนพิกัด (แกน x , แกน y , แกน z)ในระบบพิกัดฉากสามมิติทางเวกเตอร์จะระบุผ่านทาง มุมกำหนดทิศทาง direction angle')">Direction Cosine</button>
             <!-- <button class="menu-item" onclick="rotate(0, 90, 'Rotation Axis')">Rotation Axis</button> -->
             <button class="menu-item" onclick="rotate(-90, 0, 'Description')">Description</button>
         </div>
@@ -25,52 +25,61 @@
                 <div id="left">Rotation Axis</div>
                 <div id="right">
                     <form onsubmit="computeAndReplace(event)">
-                        <input type="number" class="input" id="roll" name="roll" required>
-                        <input type="number" class="input" id="pitch" name="pitch" required>
-                        <input type="number" class="input" id="yaw" name="yaw" required>
+                        <label for="roll">Roll</label>
+                        <input type="number" class="input" id="roll" name="roll" step="0.001" required>
+                        <label for="pitch">Pitch</label>
+                        <input type="number" class="input" id="pitch" name="pitch" step="0.001" required>
+                        <label for="yaw">Yaw</label>
+                        <input type="number" class="input" id="yaw" name="yaw" step="0.001" required>
                         <button type="submit">Submit</button>
                     </form>
                     
                 </div>
                 <div id="front">
                     <form onsubmit="computeAndReplace(event)">
-                        <input type="number" class="input" id="w" name="w" required>
-                        <input type="number" class="input" id="x" name="x" required>
-                        <input type="number" class="input" id="y" name="y" required>
-                        <input type="number" class="input" id="z" name="z" required>
+                        <label for="w">W</label>
+                        <input type="number" class="input" id="w" name="w" step="0.001" required>
+                        <label for="x">X</label>
+                        <input type="number" class="input" id="x" name="x" step="0.001" required>
+                        <label for="y">Y</label>
+                        <input type="number" class="input" id="y" name="y" step="0.001" required>
+                        <label for="z">Z</label>
+                        <input type="number" class="input" id="z" name="z" step="0.001" required>
                         <button type="submit">Submit</button>
                     </form>
                 </div>
                 <div id="back">
                     <form onsubmit="computeAndReplace(event)">
                         <div class="row">
-                            <input type="number" class="input" id="r00" name="r00" required>
-                            <input type="number" class="input" id="r01" name="r01" required>
-                            <input type="number" class="input" id="r02" name="r02" required>
+                            <input type="number" class="input" id="r00" name="r00" step="0.001" required>
+                            <input type="number" class="input" id="r01" name="r01" step="0.001" required>
+                            <input type="number" class="input" id="r02" name="r02" step="0.001" required>
                         </div>
                         <div class="row">
-                            <input type="number" class="input" id="r10" name="r10" required>
-                            <input type="number" class="input" id="r11" name="r11" required>
-                            <input type="number" class="input" id="r12" name="r12" required>
+                            <input type="number" class="input" id="r10" name="r10" step="0.001" required>
+                            <input type="number" class="input" id="r11" name="r11" step="0.001" required>
+                            <input type="number" class="input" id="r12" name="r12" step="0.001" required>
                         </div>
                         <div class="row">
-                            <input type="number" class="input" id="r20" name="r20" required>
-                            <input type="number" class="input" id="r21" name="r21" required>
-                            <input type="number" class="input" id="r22" name="r22" required>
+                            <input type="number" class="input" id="r20" name="r20" step="0.001" required>
+                            <input type="number" class="input" id="r21" name="r21" step="0.001" required>
+                            <input type="number" class="input" id="r22" name="r22" step="0.001" required>
                         </div>
                         <button type="submit">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
-        <!-- <div class="card-container">
+        <div class="card-container anoter-class">
             <div class="card">
                 <div class="front"></div>
-                <div class="back">
+                <div class="back">  
                     <p id="text"></p>
+                    <p id="ahh"></p>
                 </div>
             </div>
-        </div> -->
+        </div>
+        
     </section>
 </body>
 <script src="./index.js"></script>
